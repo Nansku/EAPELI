@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="eapeli">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>EA-peli</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+  </head>
+  <body>
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="row dropdown menu">
+          <h1 class="dropdown-toggle header-text" data-toggle="dropdown">EA-peli
+            <span class="caret"></span></h1>
+          <ul class="dropdown-menu">
+            <li><a href="/#!/">ALUSTA</a></li>
+            <li><a href="/#!/!end">LOPETA</a></li>
+            <li><a href="/#!/admin">YLLÄPITO</a> </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-sm-6 view-container">
+        <div ng-view class="view-frame"></div>
+      </div>
+
+      <div class="col-sm-3">
+
+      </div>
+    </div>
+
+    <script src="scripts/libraries.js"></script>
+    <script src="scripts/eapeli.js"></script>
+  </body>
+</html>

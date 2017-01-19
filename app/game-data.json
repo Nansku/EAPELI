@@ -1,0 +1,21 @@
+
+[
+    {
+        "vaihtoehdot":["Soita hätänumeroon","Jää tuijottamaan","Mene liekkeihin"],
+        "kuva":"images/tulipalov2.gif",
+        "vastaus": "Soita hätänumeroon",
+        "viesti": "O'ou talo on tulessa!"
+    },
+    {
+        "vaihtoehdot":["Soita vanhemmalle","Tuijota pipiä","Leiki mudassa"],
+        "kuva":"images/pipiv2.gif",
+        "vastaus": "Soita vanhemmalle",
+        "viesti": "Voi ei! Pipi tuli.."
+    },
+    {
+        "vaihtoehdot":["Mene kiusaamaan","Kerro vanhemmalle","Älä välitä ollenkaan"],
+        "kuva":"images/kiusaaminenv2.gif",
+        "vastaus": "Kerro vanhemmalle",
+        "viesti": "Kauhistus! Jotain kiusataan.."
+    }
+]

@@ -1,0 +1,15 @@
+.end-component {
+    margin-top: 100px;
+    text-align: center;
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 10px;
+}
+
+.end-component-button {
+    background-color: darkcyan;
+    border-style: solid;
+    border-color: darkcyan;
+    border-radius: 10px;
+    padding: 5px;
+    width: 100px;
+}

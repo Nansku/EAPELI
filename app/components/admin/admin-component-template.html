@@ -1,0 +1,106 @@
+<div class="admin">
+    <div class=" adminbackground">
+    <h1>YLLÄPITO</h1>
+
+    <form novalidate name="adminform" class="form-horizontal">
+        <div class="form-group" ng-class="{'has-error' : adminform.ekavaihtoehto.$invalid && adminform.$submitted}">
+            <label class="col-sm-3 control-label">1. Vaihtoehto</label>
+            <div class="col-sm-9">
+                <input class="form-control" ng-model="$ctrl.firstoption" type="text" placeholder="1. Vaihtoehto" required name="ekavaihtoehto">
+                <div ng-show="adminform.$submitted">
+                    <div class="text-danger" ng-show="adminform.ekavaihtoehto.$error.required">Kirjoita eka vaihtoehto.</div>
+                </div>
+            </div>
+
+        </div>
+        <div class="form-group" ng-class="{'has-error' : adminform.tokavaihtoehto.$invalid && adminform.$submitted}">
+            <label class="col-sm-3 control-label">2. Vaihtoehto</label>
+            <div class="col-sm-9">
+                <input class="col-sm-10 form-control" ng-model="$ctrl.secondoption" type="text" placeholder="2. Vaihtoehto" required name="tokavaihtoehto">
+                <div ng-show="adminform.$submitted">
+                    <div class="text-danger" ng-show="adminform.tokavaihtoehto.$error.required">Kirjoita toka vaihtoehto.</div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group" ng-class="{'has-error' : adminform.kolmasvaihtoehto.$invalid && adminform.$submitted}">
+            <label class="col-sm-3 control-label">3. Vaihtoehto</label>
+            <div class="col-sm-9">
+                <input class="col-sm-10 form-control" ng-model="$ctrl.thirdoption" type="text" placeholder="3. Vaihtoehto" required name="kolmasvaihtoehto">
+                <div ng-show="adminform.$submitted">
+                    <div class="text-danger" ng-show="adminform.kolmasvaihtoehto.$error.required">Kirjoita kolmas vaihtoehto.</div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group" ng-class="{'has-error' : adminform.tilanteeninfo.$invalid && adminform.$submitted}">
+            <label class="col-sm-3 control-label">Tilanneinfo</label>
+            <div class="col-sm-9">
+                <input class="col-sm-10 form-control" ng-model="$ctrl.questioninfo" type="text" placeholder="Tietoa tilanteesta" required name="tilanteeninfo">
+                <div ng-show="adminform.$submitted">
+                    <div class="text-danger" ng-show="adminform.tilanteeninfo.$error.required">Kirjoita tilanteen info.</div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group" ng-class="{'has-error' : adminform.answer.$invalid && adminform.$submitted}">
+            <label class="col-sm-3 control-label">Vastaus</label>
+            <div class="col-sm-9">
+                <input class="col-sm-10 form-control" ng-model="$ctrl.answer" type="text" placeholder="Kirjoita vastaus. HUOM! Pitää olla täysin sama kuin yksi vaihtoehdoista" required name="answer">
+                <div ng-show="adminform.$submitted">
+                    <div class="text-danger" ng-show="adminform.answer.$error.required">Kirjoita vastaus.</div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group" ng-class="{'has-error' : adminform.file.$invalid && adminform.$submitted}">
+            <label class="col-sm-3 control-label">Kuva</label>
+            <div class="col-sm-9">
+                <input
+                        class="col-sm-10"
+                        required
+                        type="file"
+                        ngf-select
+                        ng-model="$ctrl.file"
+                        name="file"
+                        ngf-pattern="'image/*'"
+                        accept="image/*"
+                        ngf-max-size="20MB"
+                />
+                <div ng-show="adminform.$submitted">
+                    <div class="text-danger" ng-show="adminform.file.$error.required">Lisää kuva</div>
+                </div>
+            </div>
+
+        </div>
+        <br>
+        <input class="btn btn-primary" type="submit" ng-click="$ctrl.submitForm(adminform)" value="Tallenna" />
+    </form>
+    </div>
+    <br>
+    <div class="container questionbackground">
+        <h2>Kysymykset:</h2>
+        <table class="table tablewidth">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Kysymys</th>
+                    <th>Vastaus 1</th>
+                    <th>Vastaus 2</th>
+                    <th>Vastaus 3</th>
+                    <th>Kuva</th>
+                    <th>Poista!</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="question in $ctrl.questions">
+                <td><b>{{$index+1}}</b></td>
+                <td><b>{{question.questioninfo}}</b></td>
+                <td><b>{{question.firstoption}}</b></td>
+                <td><b>{{question.secondoption}}</b></td>
+                <td><b>{{question.thirdoption}}</b></td>
+                <td ><img src="/images/{{question.imagename}}" style="width:100px;"></td>
+                <td  ng-click="$ctrl.deletequestion(question)"><button class="btn btn-danger text-danger">X</button></td>
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

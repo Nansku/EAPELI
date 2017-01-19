@@ -1,0 +1,48 @@
+<div class="game-component">
+    <div class="row">
+
+    </div>
+    <div class="row divbackgroundcolor">
+        <div>
+            <p class="info-text"><b>{{$ctrl.info}}</b></p>
+            <div>
+                <img class="image" ng-src="/images/{{$ctrl.image}}"/>
+            </div>
+            <div class="fading-container">
+                <p ng-show="$ctrl.answerCorrect" class="alert alert-success fadeing" role="alert">
+                    <strong>Oikein!</strong> Voit siirtyä seuraavaan tilanteeseen
+                </p>
+                <p ng-show="$ctrl.answerWrong" class="alert alert-danger fadeing" role="alert">
+                    <strong>Väärin!</strong> Yritä uudelleen...
+                </p>
+            </div>
+            <div class="text-color">
+                <p>Mitä sinun kuuluu tässä tilanteessa tehdä.<br>
+
+                    Valitse oikea vaihtoehto!<br>
+                    <br>
+                    Paina lopuksi Tarkasta- nappia.</p>
+            </div>
+            <div class="option" ng-repeat="option in $ctrl.options">
+                <button ng-click="$ctrl.selectButton(option)" ng-class="$ctrl.selectedButton == option ? 'option-button-selected': ''" class="option-button">{{option}}</button>
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <a ng-href="/#!/game/{{$ctrl.previouspage}}">
+                <button class="btn check-button" ng-disabled="$ctrl.isPreviousButtonDisabled()">EDELLINEN</button>
+            </a>
+        </div>
+        <div class="col-sm-4">
+            <!--<button class="btn check-button" ng-class="$ctrl.disabled ? 'disabled': ''" ng-click="$ctrl.selectedButton == $ctrl.answer ? $ctrl.correctAnswer(): $ctrl.wrongAnswer()">TARKISTA</button>-->
+            <button class="btn check-button" ng-disabled="$ctrl.isCheckButtonDisabled()" ng-click="$ctrl.selectedButton == $ctrl.answer ? $ctrl.correctAnswer(): $ctrl.wrongAnswer()">TARKISTA</button>
+        </div>
+        <div class="col-sm-4">
+            <a ng-href="/#!/game/{{$ctrl.nextpage}}">
+                <button class="btn check-button" ng-disabled="$ctrl.isNextButtonDisabled()">SEURAAVA</button>
+            </a>
+        </div>
+    </div>
+</div>

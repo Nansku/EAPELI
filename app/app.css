@@ -1,0 +1,42 @@
+body {
+    background-color: white;
+    background-image: url("/images/background-image-v1.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 0% 50%;
+}
+.header-text {
+    color: black ;
+    font-size: 30px;
+}
+
+.menu {
+    margin-top:20px;
+    margin-left:50px;
+    float: left;
+}
+
+.checkin {
+    float: right;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+.dropdown .dropdown-menu {
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+
+    max-height: 0;
+    display: block;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.dropdown.open .dropdown-menu {
+    max-height: 90px;
+    opacity: 1;
+}
